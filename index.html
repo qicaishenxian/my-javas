@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能推广工具箱</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🛠️ 智能推广工具箱</h1>
+    </header>
+    
+    <div class="container">
+        <!-- UTM生成器 -->
+        <section class="tool-card">
+            <h2>🔗 UTM生成器</h2>
+            <div class="input-group">
+                <input type="url" id="baseUrl" placeholder="请输入基础URL">
+                <select id="template">
+                    <option value="default">选择模板</option>
+                    <option value="wechat">微信公众号</option>
+                    <option value="douyin">抖音推广</option>
+                </select>
+                <button onclick="generateUTM()">生成链接</button>
+            </div>
+            <div id="utmOutput" class="result-box"></div>
+        </section>
+
+        <!-- SEO分析 -->
+        <section class="tool-card">
+            <h2>🔍 SEO健康检查</h2>
+            <button onclick="analyzeSEO()">开始分析</button>
+            <div id="seoResult" class="result-box"></div>
+        </section>
+
+        <!-- 二维码生成 -->
+        <section class="tool-card">
+            <h2>📲 二维码工具</h2>
+            <div class="input-group">
+                <input type="text" id="qrContent" placeholder="输入链接或文字">
+                <button onclick="generateQR()">生成</button>
+            </div>
+            <div id="qrcode"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
